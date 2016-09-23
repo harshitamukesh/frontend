@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Now</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+.mySlides {display:none;}
+</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.pnm, .price, .subtot, .grdtot').prop('readonly', true);
+            var $tblrows = $("#tblProducts tbody tr");
+
+            $tblrows.each(function (index) {
+                var $tblrow = $(this);
+
+                $tblrow.find('.qty').on('change', function () {
+
+                    var qty = $tblrow.find("[name=qty]").val();
+                    var price = $tblrow.find("[name=price]").val();
+                    var subTotal = parseInt(qty, 10) * parseFloat(price);
+
+                    if (!isNaN(subTotal)) {
+
+                        $tblrow.find('.subtot').val(subTotal.toFixed(2));
+                        var grandTotal = 0;
+
+                        $(".subtot").each(function () {
+                            var stval = parseFloat($(this).val());
+                            grandTotal += isNaN(stval) ? 0 : stval;
+                        });
+
+                        $('.grdtot').val(grandTotal.toFixed(2));
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body style="background-color:#e6fff2">
+    <section class="section">
+
+ <img class="mySlides" src="gift.jpg" width="450px" height="350px" align="right">
+  <img class="mySlides" src="bgim.jpg"width="450px" height="350px" align="right">
+</section>
+    <h2>Order Now</h2>
+    <p>Enter a number in the Quantity Column
+        and hit tab
+    </p>
+    
+    <table id="tblProducts">
+    <thead>
+        <tr>
+        <td>Product</td>
+        <td>Color</td>
+        <td>Quantity</td>
+        <td>Price</td>
+        <td>Sub-Total</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td><input type="text" class="pnm" value="Samsung Galaxy S7 Edge" name="pnm" /></td>
+         <td>
+            <select>
+            <option value="None">-- Select --</option>
+            <option >Gold</option>
+            <option >Silver</option>            
+            <option >Black</option>
+            <option>Rose Gold</option>
+            </select>
+        </td>
+        <td><input type="text" class="qty" value="" name="qty"/></td>
+        <td><input type="text" class="price" value="44200" name="price"/></td>
+        <td><input type="text" class="subtot" value="0" name="subtot"/></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="pnm" value="Apple iPhone 7" name="pnm" /></td>
+         <td>
+            <select>
+            <option value="None">-- Select --</option>
+            <option >Gold</option>
+            <option >Silver</option>            
+            <option >Jet Black</option>
+            <option>Rose Gold</option>
+            </select>
+        </td>
+        <td><input type="text" class="qty" value="" name="qty"/></td>
+        <td><input type="text" class="price" value="60000" name="price"/></td>
+        <td><input type="text" class="subtot" value="0" name="subtot"/></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="pnm" value="Microsoft Lumia 950 XL" name="pnm" /></td>
+        <td>
+            <select>
+            <option value="None">-- Select --</option>
+            <option >Black</option>
+            <option >White</option>            
+            </select>
+        </td>
+        <td><input type="text" class="qty" value="" name="qty"/></td>
+        <td><input type="text" class="price" value="39980" name="price"/></td>
+        <td><input type="text" class="subtot" value="0" name="subtot"/></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="pnm" value="BlackBerry Passport" name="pnm" /></td>
+        <td>
+            <select>
+            <option value="None">-- Select --</option>
+            <option >Black</option>
+            <option >Silver</option>            
+            <option >White</option>
+            </select>
+        </td>
+        <td><input type="text" class="qty" value="" name="qty"/></td>
+        <td><input type="text" class="price" value="34450" name="price"/></td>
+        <td><input type="text" class="subtot" value="0" name="subtot"/></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+        <td><h2>Total</h2></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><input type="text" class="grdtot" value="" name=""/></td>
+        </tr>
+    </tfoot>
+    </table>
+    <br><br>
+    <script type="text/javascript">
+var myIndex = 0;
+myfunction();
+
+function myfunction() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(myfunction, 4000); // Change image every 4 seconds
+}
+    </script>
+    <marquee direction="left">Inclusive of Tax | Warranty as applicable</marquee>
+</body>
+</html>

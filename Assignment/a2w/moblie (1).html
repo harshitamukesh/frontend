@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moblie</title>
+
+<link rel="stylesheet" href="style.css">
+<style>
+.mySlides {display:none;}
+
+	.cls{
+		
+		font-size:xx-large;
+		font-weight: bold;
+	}
+.txt{
+	
+	font-weight: bold;
+    color: solid black;
+}
+
+</style>
+
+</head>
+
+<body style="background-color:#ff5c33">
+<section class="section">
+
+ <img class="mySlides" src="one.jpg" width="450px" height="350px" align="right">
+  <img class="mySlides" src="two.jpg"width="450px" height="350px" align="right">
+</section>
+
+
+
+<div class="txt">
+<nav>
+	<a class="cls" href="HomePage.html">Home Page|</a>
+	<a class="cls" href="all.html">Order Now|</a>
+	<a class="cls" href="Reviews.html">Reviews|</a>
+</nav>
+
+
+    
+
+<dl>
+<dt class="cls">Welcome To CellCo</dt>
+<dd>Brach of THE MOBILE STORE</br>Your Favrouite Moblie Hub</dd>
+</dl>
+
+<dl >
+<dt class="cls">Write us at:</dt></dd>
+<dd>celoco@gmail.com</dd>
+</dl>
+
+<dl>
+<dt class="cls">Contact Us</dt>
+<dd>#23,4th Main,
+Kuvempunagar-570012</dd>
+<dd>0821-4468316</dd></dl>
+<marquee class="cls" direction="left" >ITEMS ONCE PURCHASED CANNOT BE RETURNED</marquee>
+
+
+</div>
+
+ <script>
+var myIndex = 0;
+myfunction();
+
+function myfunction() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(myfunction, 3000); // Change image every 3seconds
+}
+</script>
+</body>
+</html>
