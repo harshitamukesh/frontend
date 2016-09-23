@@ -1,0 +1,40 @@
+
+.right-section{
+padding: 20px;
+font-size:20pt;
+font-style: bold;
+}
+.middle-section{
+padding: 20px ;
+font-size:20pt;
+font-style: bold;
+}
+.left-section{
+padding: 20px;
+font-size:20pt;
+font-style: bold;
+}
+
+
+/*mobile landscape*/
+@media (min-width: 481px) and (max-width: 599px) { 
+	h1{
+		font-size:12px;
+	}
+}
+
+
+/* small tablet portrait*/
+@media (min-width: 600px) and (max-width: 767px) {
+	h1{
+		font-size:24px;
+	}
+}
+
+/*Tablet landscape (1024x768)*/
+
+@media (min-width: 960px) and (max-width: 1199px) {
+h1{
+		font-size:48px;
+	} 
+}
